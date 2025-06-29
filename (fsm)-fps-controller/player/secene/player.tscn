@@ -28,9 +28,11 @@ mesh = SubResource("BoxMesh_hqb76")
 skeleton = NodePath("../..")
 
 [node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571632, 0.00876737)
 
 [node name="eye" type="Node3D" parent="Head"]
+unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="Head/eye"]
 cull_mask = 1048573

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dn6ld6qxwpy7u"]
+[gd_scene load_steps=2 format=3 uid="uid://dn6ld6qxwpy7u"]
+
+[ext_resource type="PackedScene" uid="uid://kprkvpgi57h6" path="res://player/secene/player.tscn" id="1_ke4q7"]
 
 [node name="main" type="Node3D"]
 
@@ -43,5 +45,12 @@ depth = 3.73
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Base"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+use_collision = true
 flip_faces = true
 size = Vector3(50, 10, 70)
+
+[node name="player" type="Node3D" parent="."]
+
+[node name="Player" parent="player" instance=ExtResource("1_ke4q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.27066, 12.4103)
+camera_senstivity = 0.2
