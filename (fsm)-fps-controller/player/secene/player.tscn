@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://kprkvpgi57h6"]
+[gd_scene load_steps=5 format=3 uid="uid://kprkvpgi57h6"]
 
 [ext_resource type="Script" uid="uid://c3riltpe58med" path="res://player/script/player.gd" id="1_epl1i"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_epl1i"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hromg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hqb76"]
+size = Vector3(0.165, 0.165, 0.94)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_epl1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_epl1i")
+
+[node name="place_holder_meshes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="place_holder_meshes"]
+mesh = SubResource("CapsuleMesh_hromg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="place_holder_meshes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.011, 0.523, -0.455)
+layers = 2
+mesh = SubResource("BoxMesh_hqb76")
+skeleton = NodePath("../..")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571632, 0.00876737)
+
+[node name="eye" type="Node3D" parent="Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/eye"]
+cull_mask = 1048573

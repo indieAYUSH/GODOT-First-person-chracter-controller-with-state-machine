@@ -2,4 +2,46 @@
 
 [node name="main" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 56.3735, 0)
+shadow_enabled = true
+
 [node name="Base" type="Node3D" parent="."]
+
+[node name="base" type="CSGCombiner3D" parent="Base"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Base/base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9788, 1.5, 0)
+size = Vector3(10, 3, 15)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Base/base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0962, 3.5, 0)
+size = Vector3(0.234863, 1, 15)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Base/base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0719, 3.4929, -7.23977)
+size = Vector3(10, 1, 0.5)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Base/base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.038, 3.5, -7.23977)
+operation = 2
+size = Vector3(3.33972, 1, 0.5)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Base/base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0719, 3.4929, 7.24)
+size = Vector3(10, 1, 0.5)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Base/base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3513, 3.5, 7.24)
+operation = 2
+size = Vector3(3.96625, 1, 0.5)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Base/base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.166, 2.03911, 8.55838)
+polygon = PackedVector2Array(-6.07969, -2.04658, 0, 1, 1, 1, 1.17583, -1.98322)
+depth = 3.73
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+flip_faces = true
+size = Vector3(50, 10, 70)
