@@ -1,12 +1,25 @@
 class_name State
 extends Node
 
+signal change_state(new_state_name : String)
 
-# Called when the node enters the scene tree for the first time.
+var PLAYER : Player
+var ANIMATION : AnimationPlayer
+var  ANIM_TREE : AnimationTree
+
 func _ready():
-	pass # Replace with function body.
+	await owner.ready
+	PLAYER = owner as Player
+	ANIMATION = PLAYER.get_node("AnimationPlayer") as AnimationPlayer
+	ANIM_TREE = PLAYER.get_node("AnimationTree")    as AnimationTree
+func enter():
+	pass
 
+func exit():
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func update(delta):
+	pass
+
+func physics_update(delta):
 	pass

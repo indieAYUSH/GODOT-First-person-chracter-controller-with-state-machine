@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://bblqvrq0fkaeu"]
+
+[ext_resource type="Script" uid="uid://b5l01hnwm7wxh" path="res://player/script/player_stats.gd" id="1_g3yrl"]
+
+[resource]
+script = ExtResource("1_g3yrl")
+player_name = "Nishant"
+walking_speed = 8.0
+running_speed = 12.0
+jump_height = 4.5
+croch_walking_speed = 5.0
+sliding_speed = 15.0
+dash_speed = 17.0
+lerp_speed = 10.0
+acceleration = 15.0
+metadata/_custom_type_script = "uid://b5l01hnwm7wxh"

@@ -1,9 +1,12 @@
+class_name Player
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+#		
+@export var current_player : PlayerStats
 
 #Node_Refrence
 @onready var head = %Head
@@ -35,9 +38,14 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	$ui/Panel/VSplitContainer/SpeedContainer/speed_val.text = str(velocity.length())
 
 #------mouse_input----#
 func _input(event):
 	if event is InputEventMouseMotion:
-		head.rotate_x(deg_to_rad(event.relative.y)*camera_senstivity)
-		rotate_y(deg_to_rad(event.relative.x)*camera_senstivity)
+		head.rotate_x(deg_to_rad(-event.relative.y)*camera_senstivity)
+		rotate_y(deg_to_rad(-event.relative.x)*camera_senstivity)
+		head.rotation.x = clamp(head.rotation.x , deg_to_rad(-90) , deg_to_rad(90))
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
